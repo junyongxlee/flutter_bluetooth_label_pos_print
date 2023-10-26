@@ -46,6 +46,9 @@ LineText _$LineTextFromJson(Map<String, dynamic> json) {
     linefeed: json['linefeed'] as int?,
     x: json['x'] as int?,
     y: json['y'] as int?,
+    fontmul: json['fontmul'] as int?,
+    fonttype: json['fonttype'] as int?,
+    barcodeheight: json['barcodeheight'] as int?,
   );
 }
 
