@@ -168,9 +168,9 @@ public class DeviceConnFactoryManager {
         //开启读取打印机返回数据线程
         reader = new PrinterReader();
         reader.start(); //读取数据线程
+        
         //查询打印机所使用指令
-        queryPrinterCommand(); //小票机连接不上  注释这行，添加下面那三行代码。使用ESC指令
-
+        // queryPrinterCommand(); //小票机连接不上  注释这行，添加下面那三行代码。使用ESC指令
     }
 
     /**
