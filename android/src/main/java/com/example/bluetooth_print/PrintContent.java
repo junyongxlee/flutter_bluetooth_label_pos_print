@@ -154,7 +154,7 @@ public class PrintContent {
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
                   String FONTTYPE = "1";
-                  
+
                   switch(fonttype){
                         case 1:
                         FONTTYPE = "1";
@@ -197,7 +197,7 @@ public class PrintContent {
 
                   if("text".equals(type)){
                         // 绘制简体中文
-                        tsc.addText(x, y, fonttype, LabelCommand.ROTATION.ROTATION_0, fontmul, fontmul, content);
+                        tsc.addText(x, y, FONTTYPE, LabelCommand.ROTATION.ROTATION_0, fontmul, fontmul, content);
                         //打印繁体
                         //tsc.addUnicodeText(10,32, LabelCommand.FONTTYPE.TRADITIONAL_CHINESE, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1,"BIG5碼繁體中文字元","BIG5");
                         //打印韩文
