@@ -75,5 +75,8 @@ Map<String, dynamic> _$LineTextToJson(LineText instance) {
   writeNotNull('linefeed', instance.linefeed);
   writeNotNull('x', instance.x);
   writeNotNull('y', instance.y);
+  writeNotNull('fontmul', instance.fontmul);
+  writeNotNull('fonttype', instance.fonttype);
+  writeNotNull('barcodeheight', instance.barcodeheight);
   return val;
 }
