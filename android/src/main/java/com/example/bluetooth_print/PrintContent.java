@@ -149,16 +149,19 @@ public class PrintContent {
                   String content = (String)m.get("content");
                   int x = (int)(m.get("x")==null?0:m.get("x")); //dpi: 1mm约为8个点
                   int y = (int)(m.get("y")==null?0:m.get("y"));
+                  int fontmul = (int)(m.get("fontmul")==null?LabelCommand.FONTMUL.MUL_1:m.get("fontmul"));
+                  int fonttype = (int)(m.get("fonttype")==null?LabelCommand.FONTTYPE.SIMPLIFIED_CHINESE:m.get("fonttype"));
+                  int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
                   if("text".equals(type)){
                         // 绘制简体中文
-                        tsc.addText(x, y, LabelCommand.FONTTYPE.SIMPLIFIED_CHINESE, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1, content);
+                        tsc.addText(x, y, LabelCommand.fonttype, LabelCommand.ROTATION.ROTATION_0, fontmul, fontmul, content);
                         //打印繁体
                         //tsc.addUnicodeText(10,32, LabelCommand.FONTTYPE.TRADITIONAL_CHINESE, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1,"BIG5碼繁體中文字元","BIG5");
                         //打印韩文
                         //tsc.addUnicodeText(10,60, LabelCommand.FONTTYPE.KOREAN, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1,"Korean 지아보 하성","EUC_KR");
                   }else if("barcode".equals(type)){
-                        tsc.add1DBarcode(x, y, LabelCommand.BARCODETYPE.CODE128, 100, LabelCommand.READABEL.EANBEL, LabelCommand.ROTATION.ROTATION_0, content);
+                        tsc.add1DBarcode(x, y, LabelCommand.BARCODETYPE.CODE128, barcodeheight, LabelCommand.READABEL.DISABLE, LabelCommand.ROTATION.ROTATION_0, content);
                   }else if("qrcode".equals(type)){
                         tsc.addQRCode(x,y, LabelCommand.EEC.LEVEL_L, 5, LabelCommand.ROTATION.ROTATION_0, content);
                   }else if("image".equals(type)){
