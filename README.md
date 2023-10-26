@@ -1,5 +1,6 @@
-[![pub package](https://img.shields.io/pub/v/bluetooth_print.svg)](https://pub.dartlang.org/packages/bluetooth_print)
+Forked from [bluetooth_print](https://github.com/thon-ju/bluetooth_print)
 
+[![pub package](https://img.shields.io/pub/v/bluetooth_print.svg)](https://pub.dartlang.org/packages/bluetooth_print)
 
 ## Introduction
 
