@@ -153,6 +153,8 @@ public class PrintContent {
                   int fonttype = (int)(m.get("fonttype")==null?1:m.get("fonttype"));
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
+                  Log.d("Debug - " +  "fontmul: " + fontmul + ", fonttype: " + fonttype + ", barcodeheight: " + barcodeheight);
+
                   LabelCommand.FONTMUL fontMul = LabelCommand.FONTMUL.MUL_1;
                   switch(fontmul){
                         case 1:
