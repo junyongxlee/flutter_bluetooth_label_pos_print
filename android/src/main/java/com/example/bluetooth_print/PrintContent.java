@@ -150,8 +150,50 @@ public class PrintContent {
                   int x = (int)(m.get("x")==null?0:m.get("x")); //dpi: 1mm约为8个点
                   int y = (int)(m.get("y")==null?0:m.get("y"));
                   int fontmul = (int)(m.get("fontmul")==null?LabelCommand.FONTMUL.MUL_1:m.get("fontmul"));
-                  int fonttype = (int)(m.get("fonttype")==null?LabelCommand.FONTTYPE.SIMPLIFIED_CHINESE:m.get("fonttype"));
+                  int fonttype = (int)(m.get("fonttype")==null?1:m.get("fonttype"));
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
+
+                  String FONTTYPE = "1";
+                  
+                  switch(fonttype){
+                        case 1:
+                        FONTTYPE = "1";
+                        break;
+                        case 2:
+                        FONTTYPE = "2";
+                        break;
+                        case 3:
+                        FONTTYPE = "3";
+                        break;
+                        case 4:
+                        FONTTYPE = "4";
+                        break;
+                        case 5:
+                        FONTTYPE = "5";
+                        break;
+                        case 6:
+                        FONTTYPE = "6";
+                        break;
+                        case 7:
+                        FONTTYPE = "7";
+                        break;
+                        case 8:
+                        FONTTYPE = "8";
+                        break;
+                        case 9:
+                        FONTTYPE = "TSS24.BF2";
+                        break;
+                        case 10:
+                        FONTTYPE = "TST24.BF2";
+                        break;
+                        case 11:
+                        FONTTYPE = "K";
+                        break;
+
+                        default:
+                        FONTTYPE = "1";
+                        break;
+                  }
 
                   if("text".equals(type)){
                         // 绘制简体中文
