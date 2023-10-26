@@ -414,6 +414,8 @@ public class BluetoothPrintPlugin implements FlutterPlugin, ActivityAware, Metho
     if (args != null && args.containsKey("config") && args.containsKey("data")) {
       final Map<String,Object> config = (Map<String,Object>)args.get("config");
       final List<Map<String,Object>> list = (List<Map<String,Object>>)args.get("data");
+      final String commandFromArgs = (String) args.get("command");
+
       if(list == null){
         return;
       }
@@ -423,7 +425,23 @@ public class BluetoothPrintPlugin implements FlutterPlugin, ActivityAware, Metho
         @Override
         public void run() {
           assert deviceConnFactoryManager != null;
-          PrinterCommand printerCommand = deviceConnFactoryManager.getCurrentPrinterCommand();
+
+          PrinterCommand printerCommand = null;
+
+          switch(commandFromArgs){
+            case "TSC":
+              printerCommand = PrinterCommand.TSC;
+              break;
+            case "CPCL":
+              printerCommand = PrinterCommand.CPCL;
+              break;
+            case "ESC":
+              printerCommand = PrinterCommand.ESC;
+              break;
+            default:
+              printerCommand = deviceConnFactoryManager.getCurrentPrinterCommand();
+              break;
+          }
 
           if (printerCommand == PrinterCommand.ESC) {
             deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToReceipt(config, list));

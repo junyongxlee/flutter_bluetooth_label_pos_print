@@ -135,6 +135,7 @@ class BluetoothPrint {
   Future<dynamic> printReceipt(
       Map<String, dynamic> config, List<LineText> data) {
     Map<String, Object> args = Map();
+    args['command'] = "ESC";
     args['config'] = config;
     args['data'] = data.map((m) {
       return m.toJson();
@@ -146,6 +147,7 @@ class BluetoothPrint {
 
   Future<dynamic> printLabel(Map<String, dynamic> config, List<LineText> data) {
     Map<String, Object> args = Map();
+    args['command'] = "TSC";
     args['config'] = config;
     args['data'] = data.map((m) {
       return m.toJson();
