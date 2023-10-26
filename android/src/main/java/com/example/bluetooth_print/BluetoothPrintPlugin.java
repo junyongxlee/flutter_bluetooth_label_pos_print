@@ -428,6 +428,26 @@ public class BluetoothPrintPlugin implements FlutterPlugin, ActivityAware, Metho
 
           PrinterCommand printerCommand = null;
 
+          // try{
+          //   printerCommand = deviceConnFactoryManager.getCurrentPrinterCommand();
+          // }
+          // catch (Exception e){
+          //   switch(commandFromArgs){
+          //     case "TSC":
+          //       printerCommand = PrinterCommand.TSC;
+          //       break;
+          //     case "CPCL":
+          //       printerCommand = PrinterCommand.CPCL;
+          //       break;
+          //     case "ESC":
+          //       printerCommand = PrinterCommand.ESC;
+          //       break;
+          //     default:
+          //       printerCommand = PrinterCommand.ESC;
+          //       break;
+          //   }
+          // }
+
           switch(commandFromArgs){
             case "TSC":
               printerCommand = PrinterCommand.TSC;
@@ -439,7 +459,7 @@ public class BluetoothPrintPlugin implements FlutterPlugin, ActivityAware, Metho
               printerCommand = PrinterCommand.ESC;
               break;
             default:
-              printerCommand = deviceConnFactoryManager.getCurrentPrinterCommand();
+              printerCommand = PrinterCommand.ESC;
               break;
           }
 

@@ -194,7 +194,7 @@ class _MyAppState extends State<MyApp> {
                             list1.add(LineText(type: LineText.TYPE_IMAGE, x:10, y:10, content: base64Image,));
 
                             await bluetoothPrint.printLabel(config, list);
-                            await bluetoothPrint.printLabel(config, list1);
+                            // await bluetoothPrint.printLabel(config, list1);
                           }:null,
                         ),
                         OutlinedButton(
