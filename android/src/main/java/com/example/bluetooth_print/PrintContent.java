@@ -149,7 +149,7 @@ public class PrintContent {
                   String content = (String)m.get("content");
                   int x = (int)(m.get("x")==null?0:m.get("x")); //dpi: 1mm约为8个点
                   int y = (int)(m.get("y")==null?0:m.get("y"));
-                  int fontmul = (int)(m.get("fontmul")==null?LabelCommand.FONTMUL.MUL_1:m.get("fontmul"));
+                  int fontmul = (int)(m.get("fontmul")==null?1:m.get("fontmul"));
                   int fonttype = (int)(m.get("fonttype")==null?1:m.get("fonttype"));
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
