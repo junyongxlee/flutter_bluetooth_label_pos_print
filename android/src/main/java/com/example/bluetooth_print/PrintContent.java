@@ -153,45 +153,45 @@ public class PrintContent {
                   int fonttype = (int)(m.get("fonttype")==null?1:m.get("fonttype"));
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
-                  String FONTTYPE = "1";
+                  FONTTYPE fontType = null;
 
                   switch(fonttype){
                         case 1:
-                        FONTTYPE = "1";
+                        fontType = LabelCommand.FONTTYPE.FONT_1;
                         break;
                         case 2:
-                        FONTTYPE = "2";
+                        fontType = LabelCommand.FONTTYPE.FONT_2;
                         break;
                         case 3:
-                        FONTTYPE = "3";
+                        fontType = LabelCommand.FONTTYPE.FONT_3;
                         break;
                         case 4:
-                        FONTTYPE = "4";
+                        fontType = LabelCommand.FONTTYPE.FONT_4;
                         break;
                         case 5:
-                        FONTTYPE = "5";
+                        fontType = LabelCommand.FONTTYPE.FONT_5;
                         break;
                         case 6:
-                        FONTTYPE = "6";
+                        fontType = LabelCommand.FONTTYPE.FONT_6;
                         break;
                         case 7:
-                        FONTTYPE = "7";
+                        fontType = LabelCommand.FONTTYPE.FONT_7;
                         break;
                         case 8:
-                        FONTTYPE = "8";
+                        fontType = LabelCommand.FONTTYPE.FONT_8;
                         break;
                         case 9:
-                        FONTTYPE = "TSS24.BF2";
+                        fontType = LabelCommand.FONTTYPE.SIMPLIFIED_CHINESE;
                         break;
                         case 10:
-                        FONTTYPE = "TST24.BF2";
+                        fontType = LabelCommand.FONTTYPE.TRADITIONAL_CHINESE;
                         break;
                         case 11:
-                        FONTTYPE = "K";
+                        fontType = LabelCommand.FONTTYPE.KOREAN;
                         break;
 
                         default:
-                        FONTTYPE = "1";
+                        fontType = LabelCommand.FONTTYPE.TRADITIONAL_CHINESE;
                         break;
                   }
 
