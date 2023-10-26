@@ -153,8 +153,44 @@ public class PrintContent {
                   int fonttype = (int)(m.get("fonttype")==null?1:m.get("fonttype"));
                   int barcodeheight = (int)(m.get("barcodeheight")==null?100:m.get("barcodeheight"));
 
-                  FONTTYPE fontType = null;
+                  LabelCommand.FONTMUL fontMul = LabelCommand.FONTMUL.MUL_1;
+                  switch(fontmul){
+                        case 1:
+                        fontMul = LabelCommand.FONTMUL.MUL_1;
+                        break;
+                        case 2:
+                        fontMul = LabelCommand.FONTMUL.MUL_2;
+                        break;
+                        case 3:
+                        fontMul = LabelCommand.FONTMUL.MUL_3;
+                        break;
+                        case 4:
+                        fontMul = LabelCommand.FONTMUL.MUL_4;
+                        break;
+                        case 5:
+                        fontMul = LabelCommand.FONTMUL.MUL_5;
+                        break;
+                        case 6:
+                        fontMul = LabelCommand.FONTMUL.MUL_6;
+                        break;
+                        case 7:
+                        fontMul = LabelCommand.FONTMUL.MUL_7;
+                        break;
+                        case 8:
+                        fontMul = LabelCommand.FONTMUL.MUL_8;
+                        break;
+                        case 9:
+                        fontMul = LabelCommand.FONTMUL.MUL_9;
+                        break;
+                        case 10:
+                        fontMul = LabelCommand.FONTMUL.MUL_10;
+                        break;
+                        default:
+                        fontMul = LabelCommand.FONTMUL.MUL_1;
+                        break;
+                  }
 
+                  LabelCommand.FONTTYPE fontType = LabelCommand.FONTTYPE.TRADITIONAL_CHINESE;
                   switch(fonttype){
                         case 1:
                         fontType = LabelCommand.FONTTYPE.FONT_1;
@@ -197,7 +233,7 @@ public class PrintContent {
 
                   if("text".equals(type)){
                         // 绘制简体中文
-                        tsc.addText(x, y, FONTTYPE, LabelCommand.ROTATION.ROTATION_0, fontmul, fontmul, content);
+                        tsc.addText(x, y, fontType, LabelCommand.ROTATION.ROTATION_0, fontMul, fontMul, content);
                         //打印繁体
                         //tsc.addUnicodeText(10,32, LabelCommand.FONTTYPE.TRADITIONAL_CHINESE, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1,"BIG5碼繁體中文字元","BIG5");
                         //打印韩文
