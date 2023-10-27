@@ -122,7 +122,19 @@ public class PrintContent {
                   byte width = 4;
                   new String();
                   String str = "BARCODE " + x + "," + y + "," + "\"" + type.getValue() + "\"" + "," + height + "," + readable.getValue() + "," + rotation.getValue() + "," + narrow + "," + width + "," + "\"" + content + "\"" + "\r\n";
-                  this.addStrToCommand(str);
+                  byte[] bs = null;
+                  
+                  if(!str.equals("")) {
+                        try {
+                        bs = str.getBytes("GB2312");
+                        } catch (UnsupportedEncodingException var4) {
+                        var4.printStackTrace();
+                        }
+
+                        for(int i = 0; i < bs.length; ++i) {
+                        this.Command.add(Byte.valueOf(bs[i]));
+                        }
+                  }
               }
         } 
 
