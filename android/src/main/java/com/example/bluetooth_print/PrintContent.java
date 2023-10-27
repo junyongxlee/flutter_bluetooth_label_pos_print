@@ -7,6 +7,7 @@ import android.util.Log;
 import com.gprinter.command.CpclCommand;
 import com.gprinter.command.EscCommand;
 import com.gprinter.command.LabelCommand;
+import com.gprinter.command.TscCommand;
 
 import java.util.List;
 import java.util.Map;
