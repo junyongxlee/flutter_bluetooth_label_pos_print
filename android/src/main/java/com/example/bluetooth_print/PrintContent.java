@@ -125,6 +125,7 @@ public class PrintContent {
             int width = (int)(config.get("width")==null?60:config.get("width")); // 单位：mm
             int height = (int)(config.get("height")==null?75:config.get("height")); // 单位：mm
             int gap = (int)(config.get("gap")==null?0:config.get("gap")); // 单位：mm
+            int copies = (int)(config.get("copies")==null?1:config.get("copies")); // 打印份数
 
             // 设置标签尺寸宽高，按照实际尺寸设置 单位mm
             tsc.addSize(width, height);
@@ -252,7 +253,7 @@ public class PrintContent {
             }
 
             // 打印标签
-            tsc.addPrint(1, 1);
+            tsc.addPrint(1, copies);
             // 打印标签后 蜂鸣器响
             tsc.addSound(2, 100);
             //开启钱箱
