@@ -119,18 +119,18 @@ public class PrintContent {
       /**
        * 标签打印对象转换
        */
-
-       public class CustomLabelCommand extends LabelCommand { 
-            public void add1DBarcode(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
-                  byte narrow = 4;
-                  byte width = 4;
-                  new String();
-                  String str = "BARCODE " + x + "," + y + "," + "\"" + type.getValue() + "\"" + "," + height + "," + readable.getValue() + "," + rotation.getValue() + "," + narrow + "," + width + "," + "\"" + content + "\"" + "\r\n";
-                  this.addStrToCommand(str);
-              }
-        } 
-
       public static Vector<Byte> mapToLabel(Map<String,Object> config, List<Map<String,Object>> list) {
+
+            public class CustomLabelCommand extends LabelCommand { 
+                  public void add1DBarcode(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
+                        byte narrow = 4;
+                        byte width = 4;
+                        new String();
+                        String str = "BARCODE " + x + "," + y + "," + "\"" + type.getValue() + "\"" + "," + height + "," + readable.getValue() + "," + rotation.getValue() + "," + narrow + "," + width + "," + "\"" + content + "\"" + "\r\n";
+                        this.addStrToCommand(str);
+                    }
+              } 
+      
             LabelCommand tsc = new CustomLabelCommand();
 
             int width = (int)(config.get("width")==null?60:config.get("width")); // 单位：mm
