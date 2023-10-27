@@ -7,7 +7,6 @@ import android.util.Log;
 import com.gprinter.command.CpclCommand;
 import com.gprinter.command.EscCommand;
 import com.gprinter.command.LabelCommand;
-import com.gprinter.command.TscCommand;
 
 import java.util.List;
 import java.util.Map;
@@ -122,7 +121,7 @@ public class PrintContent {
        */
 
        public class CustomLabelCommand extends LabelCommand { 
-            public void add1DBarcode(int x, int y, TscCommand.BARCODETYPE type, int height, TscCommand.READABEL readable, TscCommand.ROTATION rotation, String content) {
+            public void add1DBarcode(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
                   byte narrow = 4;
                   byte width = 4;
                   new String();
