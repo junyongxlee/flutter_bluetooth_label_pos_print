@@ -117,7 +117,7 @@ public class PrintContent {
       }
 
       public class CustomLabelCommand extends LabelCommand { 
-            public static void add1DBarcode(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
+            public static void add1DBarcodeCustom(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
                   byte narrow = 4;
                   byte width = 4;
                   new String();
@@ -252,7 +252,7 @@ public class PrintContent {
                         //打印韩文
                         //tsc.addUnicodeText(10,60, LabelCommand.FONTTYPE.KOREAN, LabelCommand.ROTATION.ROTATION_0, LabelCommand.FONTMUL.MUL_1, LabelCommand.FONTMUL.MUL_1,"Korean 지아보 하성","EUC_KR");
                   }else if("barcode".equals(type)){
-                        tsc.add1DBarcode(x, y, LabelCommand.BARCODETYPE.CODE128, barcodeheight, LabelCommand.READABEL.DISABLE, LabelCommand.ROTATION.ROTATION_0, content);
+                        tsc.add1DBarcodeCustom(x, y, LabelCommand.BARCODETYPE.CODE128, barcodeheight, LabelCommand.READABEL.DISABLE, LabelCommand.ROTATION.ROTATION_0, content);
                   }else if("qrcode".equals(type)){
                         tsc.addQRCode(x,y, LabelCommand.EEC.LEVEL_L, 5, LabelCommand.ROTATION.ROTATION_0, content);
                   }else if("image".equals(type)){
