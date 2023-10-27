@@ -117,7 +117,7 @@ public class PrintContent {
       }
 
       public class CustomLabelCommand extends LabelCommand { 
-            public static void add1DBarcodeCustom(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
+            public void add1DBarcodeCustom(int x, int y, LabelCommand.BARCODETYPE type, int height, LabelCommand.READABEL readable, LabelCommand.ROTATION rotation, String content) {
                   byte narrow = 4;
                   byte width = 4;
                   new String();
